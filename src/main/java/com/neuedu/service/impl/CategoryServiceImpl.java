@@ -17,12 +17,12 @@ public class CategoryServiceImpl implements ICategoryService {
 
     @Override
     public int addCategory(Category category) throws MyException {
-        return 0;
+        return categoryMapper.insert(category);
     }
 
     @Override
     public int deleteCategory(int categoryId) throws MyException {
-        return 0;
+        return categoryMapper.deleteByPrimaryKey(categoryId);
     }
 
     @Override
@@ -43,5 +43,23 @@ public class CategoryServiceImpl implements ICategoryService {
 
        return  categoryMapper.selectByPrimaryKey(categoryId);
 
+    }
+
+    @Override
+    public List<Category> newSelectAll() {
+
+        return categoryMapper.newSelectAll();
+
+
+    }
+
+    @Override
+    public List<Category> selectByKind(int kind) {
+        return categoryMapper.selectByKind(kind);
+    }
+
+    @Override
+    public Category selectLast() {
+        return categoryMapper.selectLast();
     }
 }

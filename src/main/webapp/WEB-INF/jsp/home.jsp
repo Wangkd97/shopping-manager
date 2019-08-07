@@ -15,8 +15,11 @@
 
 <h1>欢迎,${user.username}登录</h1>
 
-
-
+<a href="/user/category/find">管理类别信息</a>
+<br>
+<a href="/user/getAllUser">管理用户信息</a>
+<br>
+<a href="/user/product/getAll">管理商品信息</a>
 
 </body>
 </html>

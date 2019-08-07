@@ -31,4 +31,7 @@ public interface ICategoryService {
      * */
 
     public Category findCategoryById(int categoryId);
+    public List<Category> newSelectAll();
+    public List<Category> selectByKind(int kind);
+    public Category selectLast();
 }

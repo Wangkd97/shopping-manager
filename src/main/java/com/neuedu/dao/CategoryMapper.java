@@ -45,4 +45,7 @@ public interface CategoryMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(@Param("category") Category record);
+    List<Category> newSelectAll();
+    List<Category> selectByKind(Integer kind);
+    Category selectLast();
 }

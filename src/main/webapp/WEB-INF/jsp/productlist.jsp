@@ -16,7 +16,7 @@
 <table>
     <thead>
     <th>商品Id</th>
-    <th>商品所属类别id</th>
+    <th>商品所属类别</th>
     <th>商品名称</th>
     <th>商品副标题</th>
     <th>商品主图片</th>
