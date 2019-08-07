@@ -59,4 +59,8 @@ public interface UserInfoMapper {
 
     UserInfo findByUsernameAndPassword(@Param("user") UserInfo userInfo);
 
+    /**
+     * 查询所有普通用户
+     * */
+    List<UserInfo> getAllUser();
 }

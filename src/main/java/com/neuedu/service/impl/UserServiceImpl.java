@@ -7,6 +7,8 @@ import com.neuedu.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements IUserService {
 
@@ -50,4 +52,12 @@ public class UserServiceImpl implements IUserService {
 
         return userinfo_result;
     }
+
+    @Override
+    public List<UserInfo> getAllUser() {
+        List<UserInfo> list = userInfoMapper.getAllUser();
+        return list;
+    }
+
+
 }
