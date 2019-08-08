@@ -12,5 +12,9 @@ public class TestController {
 
         return "login";
     }
+    @RequestMapping("/login")
+    public  String  GMlogin(){
 
+        return "index";
+    }
 }

@@ -59,5 +59,25 @@ public class UserServiceImpl implements IUserService {
         return list;
     }
 
+    @Override
+    public int insert(UserInfo userInfo) {
+        return userInfoMapper.insert(userInfo);
+    }
+
+    @Override
+    public int updateById(UserInfo userInfo) {
+        return userInfoMapper.updateByPrimaryKey(userInfo);
+    }
+
+    @Override
+    public UserInfo selectById(int id) {
+        return userInfoMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int deleteById(int id) {
+        return userInfoMapper.deleteByPrimaryKey(id);
+    }
+
 
 }

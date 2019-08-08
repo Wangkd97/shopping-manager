@@ -26,7 +26,7 @@ public class UserController {
         if (session.getAttribute("user")!=null){
             return "redirect:home";
         }
-        return "login";
+        return "index";
     }
 
     @RequestMapping(value = "login",method = RequestMethod.POST)
@@ -45,7 +45,7 @@ public class UserController {
 
             return "redirect:home";
         }
-        return "login";
+        return "index";
     }
 
 
@@ -60,9 +60,42 @@ public class UserController {
 
         List<UserInfo> list =userService.getAllUser();
         session.setAttribute("list",list);
-        return "userlist";
+        return "user/list";
     }
 
+    @RequestMapping("rigist")
+    public String rigist(){
+        return "redirect:index";
+    }
+    @RequestMapping("index")
+    public String index(){
+        return "user/index";
+    }
 
+    @RequestMapping(value = "update",method =RequestMethod.GET)
+    public String update(){
+        return "index";
+    }
+    @RequestMapping(value = "update",method =RequestMethod.POST)
+    public String update(UserInfo userInfo,HttpSession session){
+        if (userInfo.getId()==null){
+            //注册
+                int i = userService.insert(userInfo);
+                if (i>0){
+                    return "redirect:/user/getAllUser";
+                }else{
+                    return "index";
+                }
+        }else{
+            //修改
+            int j=userService.updateById(userInfo);
+            if (j>0){
+                return "redirect:/user/getAllUser";
+            }else{
+                return "index";
+            }
+        }
+
+    }
 
 }

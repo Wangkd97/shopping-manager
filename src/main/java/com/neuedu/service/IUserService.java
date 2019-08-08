@@ -11,4 +11,9 @@ public interface IUserService {
 
     List<UserInfo> getAllUser();
 
+     int insert(UserInfo userInfo);
+     int updateById(UserInfo userInfo);
+     UserInfo selectById(int id);
+     int deleteById(int id);
+
 }

@@ -15,23 +15,24 @@
                     <table class="table table-bordered table-condensed">
                         <thead>
                         <tr>
-                            <th>类目id</th>
-                            <th>名字</th>
-                            <th>type</th>
-                            <th>创建时间</th>
-                            <th>修改时间</th>
-                            <th>操作</th>
+                            <th>用户类别</th>
+                            <th>用户名</th>
+                            <th>密码</th>
+                            <th>邮箱</th>
+                            <th>手机号</th>
+                            <th>密保问题</th>
+                            <th>密保答案</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <#list categorylist as category>
+                        <#list user as u>
                         <tr>
-                            <td>${category.id}</td>
-                            <td>${category.name}</td>
-                            <td>${category.status}</td>
-                            <td>${category.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
-                            <td>${category.updateTime?string('yyyy-MM-dd HH:mm:ss')}</td>
+                            <td>${u.role}</td>
+                            <td>${u.username}</td>
+                            <td>${u.password}</td>
+                            <td>${u.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
+                            <td>${u.updateTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                             <td><a href="/sell/seller/category/index?categoryId=${category.categoryId}">修改</a></td>
                         </tr>
                         </#list>
