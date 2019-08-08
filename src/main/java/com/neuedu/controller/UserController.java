@@ -22,13 +22,22 @@ public class UserController {
 
 
     @RequestMapping(value = "login",method = RequestMethod.GET)
-    public  String login(){
+
+
+    public  String login(HttpSession session){
+        if (session.getAttribute("user")!=null){
+            return "redirect:home";
+        }
         return "login";
     }
 
     @RequestMapping(value = "login",method = RequestMethod.POST)
     public  String login(UserInfo userInfo, HttpSession session){
 
+
+        if (session.getAttribute("user")!=null){
+            return "redirect:home";
+        }
        UserInfo loginUserInfo= userService.login(userInfo);
 
         System.out.println(loginUserInfo);
