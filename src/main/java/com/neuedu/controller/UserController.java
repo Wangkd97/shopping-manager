@@ -21,9 +21,7 @@ public class UserController {
 
 
 
-    @RequestMapping(value = "login",method = RequestMethod.GET)
-
-
+    @RequestMapping(value="login",method = RequestMethod.GET)
     public  String login(HttpSession session){
         if (session.getAttribute("user")!=null){
             return "redirect:home";
@@ -54,7 +52,7 @@ public class UserController {
     @RequestMapping("home")
     public  String  home(){
 
-        return "home";
+        return "home/home";
     }
 
     @RequestMapping("getAllUser")

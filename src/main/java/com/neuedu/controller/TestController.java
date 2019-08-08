@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TestController {
 
 
-    @RequestMapping("/login")
+    @RequestMapping("/ftl")
     public  String  login(){
 
         return "login";

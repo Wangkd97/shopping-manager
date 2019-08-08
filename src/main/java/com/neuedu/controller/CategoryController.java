@@ -91,7 +91,7 @@ public class CategoryController {
 
         session.setAttribute("kindMap",map);
 
-        return "categorylist";
+        return "category/list";
     }
 
 
@@ -107,26 +107,58 @@ public class CategoryController {
         Category category=categoryService.findCategoryById(categoryId);
         request.setAttribute("category",category);
 
-        return "categoryupdate";
+        return "category/index";
     }
 
-    @RequestMapping(value = "update/{id}",method = RequestMethod.POST)
+    @RequestMapping(value = "update/${id}}",method = RequestMethod.POST)
     public  String  update(Category category, HttpServletRequest request,
                            HttpServletResponse response) throws UnsupportedEncodingException {
 
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         System.out.println(category.getParent_id()+" ==="+category.getParentId()+"==");
+        //
+        if (category.getId()==null){
+            addCategory(category);
+            return "redirect:/user/category/find";
+
+        }else{
+            int count= categoryService.updateCategory(category);
+            if(count>0){
+                //修改成功
+                return "redirect:/user/category/find";
+            }
+        }
+        //return "category/index";
+        return "redirect:/user/category/find";
+    }
+    @RequestMapping(value = "update",method = RequestMethod.POST)
+    public  String  update2(Category category, HttpServletRequest request,
+                           HttpServletResponse response) throws UnsupportedEncodingException {
+
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+        System.out.println(category.getParent_id()+" ==="+category.getParentId()+"==");
        //
+        if (category.getId()==null){
+            addCategory(category);
+        }
        int count= categoryService.updateCategory(category);
-
-
        if(count>0){
            //修改成功
            return "redirect:/user/category/find";
        }
 
-        return "categoryupdate";
+        return "category/index";
+    }
+
+    @RequestMapping(value = "insert")
+    public String insert(HttpServletRequest request,HttpServletResponse response) throws UnsupportedEncodingException {
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
+        List<Category> list = categoryService.newSelectAll();
+        request.setAttribute("categorykinds",list);
+        return "category/index";
     }
 
     @RequestMapping("findAll")
@@ -153,18 +185,22 @@ public class CategoryController {
     }
     @RequestMapping("addCategory")
     public String addCategory( Category ca){
-        Category last=categoryService.selectLast();
-        System.out.println(last.getSortOrder()+"========");
-        System.out.println(last.getSort_order()+"***********");
-        ca.setSortOrder(last.getSortOrder());
-        ca.setSortOrder(last.getSort_order()+1);
-        ca.setSort_order(last.getSort_order()+1);
-        ca.setSort_order(last.getSortOrder());
-        int i=categoryService.addCategory(ca);
+        if (ca.getParentId()!=null&&ca.getName()!=null){
+            Category last=categoryService.selectLast();
+            System.out.println(last.getSortOrder()+"========");
+            System.out.println(last.getSort_order()+"***********");
+            ca.setSortOrder(last.getSortOrder());
+            ca.setSortOrder(last.getSort_order()+1);
+            ca.setSort_order(last.getSort_order()+1);
+            ca.setSort_order(last.getSortOrder());
+            int i=categoryService.addCategory(ca);
 
-        if (i>0){
-            return "redirect:/user/category/find";
+            if (i>0){
+               // return "redirect:/user/category/find";
+                return "category/list";
+            }
         }
-        return "categorylist";
+
+        return "categorylist"; //这个使用freemarker还需要修改
     }
 }

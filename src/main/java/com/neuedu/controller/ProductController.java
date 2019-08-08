@@ -27,7 +27,7 @@ public class ProductController {
         List<Product> list = iProductService.getAllProduct();
         System.out.println(list);
         session.setAttribute("list",list);
-        return "productlist";
+        return "product/list";
     }
 
 
