@@ -30,7 +30,7 @@ img{max-width:100%;}
 body {
     text-align: center;
 	font-family: 'GFS Neohellenic', sans-serif;
-	background: url(/static/images/1.jpg)no-repeat;
+	background: url("/static/1.jpg")no-repeat;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;

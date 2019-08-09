@@ -83,8 +83,9 @@ public class ProductController {
         return "product/index";
     }
     @RequestMapping(value = "insert",method = RequestMethod.GET)
-    public String insert(){
-
+    public String insert(HttpSession session){
+        List<Category> list =iProductService.newSelectAll();
+        session.setAttribute("categoryList",list);
         return "product/insert";
     }
 

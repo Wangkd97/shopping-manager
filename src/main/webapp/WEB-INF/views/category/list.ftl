@@ -20,7 +20,7 @@
                             <th>父类名称</th>
                             <th>创建时间</th>
                             <th>修改时间</th>
-                            <th>操作</th>
+                            <th colspan="2">操作</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -33,6 +33,7 @@
                             <td>${category.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                             <td>${category.updateTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                             <td><a href="/user/category/update/${category.id}">修改</a></td>
+                            <td><a href="/user/category/deleteById/${category.id}">删除</a></td>
                         </tr>
                         </#list>
                         </tbody>
