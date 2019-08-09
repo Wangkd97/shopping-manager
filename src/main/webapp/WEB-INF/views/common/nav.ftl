@@ -13,7 +13,7 @@
             <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">操作</li>
                 <li><a href="/user/product/getAll">列表</a></li>
-                <li><a href="">新增</a></li>
+                <li><a href="/user/product/insert">新增</a></li>
             </ul>
         </li>
         <li class="dropdown open">
@@ -29,11 +29,10 @@
             <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">操作</li>
                 <li><a href="/user/getAllUser">列表</a></li>
-                <li><a href="/user/">新增</a></li>
             </ul>
         </li>
         <li>
-            <a href=""><i class="fa fa-fw fa-list-alt"></i> 登出</a>
+            <a href="/user/exit"><i class="fa fa-fw fa-list-alt"></i> 登出</a>
         </li>
     </ul>
 </nav>

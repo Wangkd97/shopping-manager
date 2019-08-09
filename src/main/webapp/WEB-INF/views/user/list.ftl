@@ -22,18 +22,24 @@
                             <th>手机号</th>
                             <th>密保问题</th>
                             <th>密保答案</th>
+                            <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
 
-                        <#list user as u>
+                        <#list list as u>
                         <tr>
-                            <td>${u.role}</td>
+                            <td><#if u.role == '0'>管理员<#else >普通用户</#if></td>
                             <td>${u.username}</td>
                             <td>${u.password}</td>
-                            <td>${u.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
-                            <td>${u.updateTime?string('yyyy-MM-dd HH:mm:ss')}</td>
-                            <td><a href="/sell/seller/category/index?categoryId=${category.categoryId}">修改</a></td>
+                            <td>${u.email}</td>
+                            <td>${u.phone}</td>
+                            <td>${u.question}</td>
+                            <td>${u.answer}</td>
+                            <td><a href="/user/update/${u.id}">修改</a>
+                                <a href="/user/deleteById/${u.id}">删除</a>
+                            </td>
+
                         </tr>
                         </#list>
                         </tbody>

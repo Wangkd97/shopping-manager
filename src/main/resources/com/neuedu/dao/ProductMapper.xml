@@ -56,8 +56,7 @@
       price = #{price,jdbcType=DECIMAL},
       stock = #{stock,jdbcType=INTEGER},
       status = #{status,jdbcType=INTEGER},
-      create_time = #{createTime,jdbcType=TIMESTAMP},
-      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_time = now(),
       sub_images = #{subImages,jdbcType=LONGVARCHAR},
       detail = #{detail,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
@@ -82,4 +81,10 @@
 --     from neuedu_product
     select  p.id,  p.name, c.name as categoryName, subtitle, main_image, price, stock, p.status, sub_images, detail,p.update_time,p.create_time from neuedu_product as p inner join neuedu_category as c on p.category_id=c.id
   </select>
+  <update id="updatestatus" parameterType="com.neuedu.pojo.Product">
+     update neuedu_product
+    set
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>

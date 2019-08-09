@@ -16,8 +16,8 @@
                         <div class="form-group">
                             <label>用户类型</label>
                             <select name="role">
-                                <option name="role" value="0">管理员</option>
-                                <option name="role" value="1">普通用户</option>
+                                <option name="role" value="0" <#if user.role =='0'>selected="selected"</#if>管理员</option>
+                                <option name="role" value="1" <#if user.role =='1'>selected="selected"</#if>>普通用户</option>
                             </select>
 
                         </div>
@@ -45,7 +45,7 @@
                             <label>密保答案</label>
                             <input name="answer" type="text" class="form-control" value="${(user.answer)!''}"/>
                         </div>
-                        <input hidden type="text" name="categoryId" value="${(category.categoryId)!''}">
+                        <input hidden type="text" name="id" value="${(user.id)!''}">
                         <button type="submit" class="btn btn-default">提交</button>
                     </form>
                 </div>

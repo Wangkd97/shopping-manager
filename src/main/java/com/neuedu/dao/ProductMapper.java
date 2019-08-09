@@ -45,4 +45,5 @@ public interface ProductMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Product record);
+    int updatestatus(Product product);
 }

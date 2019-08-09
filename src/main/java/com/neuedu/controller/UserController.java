@@ -5,6 +5,7 @@ import com.neuedu.pojo.UserInfo;
 import com.neuedu.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -63,21 +64,23 @@ public class UserController {
         return "user/list";
     }
 
-    @RequestMapping("rigist")
-    public String rigist(){
-        return "redirect:index";
+    @RequestMapping("regist")
+    public String regist(){
+        return "rigist";
     }
     @RequestMapping("index")
     public String index(){
         return "user/index";
     }
 
-    @RequestMapping(value = "update",method =RequestMethod.GET)
-    public String update(){
-        return "index";
+    @RequestMapping(value = "update/{id}",method =RequestMethod.GET)
+    public String update(@PathVariable("id") int id,HttpSession session){
+        UserInfo userInfo=userService.selectById(id);
+        session.setAttribute("user",userInfo);
+        return "user/index";
     }
     @RequestMapping(value = "update",method =RequestMethod.POST)
-    public String update(UserInfo userInfo,HttpSession session){
+    public String update(UserInfo userInfo){
         if (userInfo.getId()==null){
             //注册
                 int i = userService.insert(userInfo);
@@ -97,5 +100,17 @@ public class UserController {
         }
 
     }
-
+    @RequestMapping(value = "deleteById/{id}")
+    public String deleteById(@PathVariable("id") int id){
+        int i=userService.deleteById(id);
+        if (i>0){
+            return "redirect:/user/getAllUser";
+        }
+        return "redirect:/user/getAllUser";
+    }
+    @RequestMapping("exit")
+    public String exit(HttpSession session){
+        session.invalidate();
+        return "redirect:/user/login";
+    }
 }

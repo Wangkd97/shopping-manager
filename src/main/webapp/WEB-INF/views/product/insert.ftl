@@ -15,27 +15,27 @@
                     <form role="form" method="post" action="/user/product/update">
                         <div class="form-group">
                             <label>名称</label>
-                            <input name="name" type="text" class="form-control" value="${(productInfo.name)!''}"/>
+                            <input name="name" type="text" class="form-control" value=""/>
                         </div>
                         <div class="form-group">
                             <label>副标题</label>
-                            <input name="subtitle" type="text" class="form-control" value="${(productInfo.subtitle)!''}"/>
+                            <input name="subtitle" type="text" class="form-control" value=""/>
                         </div>
                         <div class="form-group">
                             <label>描述</label>
-                            <input name="detail" type="text" class="form-control" value="${(productInfo.detail)!''}"/>
+                            <input name="detail" type="text" class="form-control" value=""/>
                         </div>
                         <div class="form-group">
                             <label>价格</label>
-                            <input name="price" type="text" class="form-control" value="${(productInfo.price)!''}"/>
+                            <input name="price" type="text" class="form-control" value=""/>
                         </div>
                         <div class="form-group">
                             <label>库存</label>
-                            <input name="stock" type="number" class="form-control" value="${(productInfo.stock)!''}"/>
+                            <input name="stock" type="number" class="form-control" value=""/>
                         </div>
                         <div class="form-group">
                             <label>图片</label>
-                            <input id="productIcon" name="subImages" type="text" hidden="hidden" value="${(productInfo.productIcon)!''}"/>
+                            <input id="productIcon" name="subImages" type="text" hidden="hidden" value=""/>
 
                             <div class="file-loading">
                                 <input id="input-id" type="file">
@@ -55,7 +55,7 @@
                                 </#list>
                             </select>
                         </div>
-                        <input hidden type="text" name="id" value="${(productInfo.id)!''}">
+                        <input hidden type="text" name="id" value="">
                         <button type="submit" class="btn btn-default">提交</button>
                     </form>
                 </div>
