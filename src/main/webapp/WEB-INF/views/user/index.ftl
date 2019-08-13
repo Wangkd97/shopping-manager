@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="row clearfix">
                 <div class="col-md-12 column">
-                    <form role="form" method="post" action="/user/update">
+                    <form role="form" method="post" action="/business/user/update">
                         <div class="form-group">
                             <label>用户类型</label>
                             <select name="role">

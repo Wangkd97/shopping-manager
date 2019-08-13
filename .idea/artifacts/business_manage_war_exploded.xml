@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="business_manage:war exploded">
-    <output-path>$PROJECT_DIR$/target/business_manage</output-path>
+    <output-path>$PROJECT_DIR$/target/business</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -63,14 +63,13 @@
           <element id="library" level="project" name="Maven: xalan:xalan:2.7.1" />
           <element id="library" level="project" name="Maven: xalan:serializer:2.7.1" />
           <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk15:1.45" />
-          <element id="library" level="project" name="Maven: freemarker:freemarker:2.3.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-context-support:3.2.3.RELEASE" />
           <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.3" />
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/target/business_manage/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/target/business/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="business_manage/web/Web" />
     </root>

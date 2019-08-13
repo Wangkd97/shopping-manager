@@ -9,8 +9,8 @@
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Meta tag Keywords -->
 <!-- css files -->
-<link rel="stylesheet" href="/static/styleofregist.css" type="text/css" media="all" /> <!-- Style-CSS -->
-<link rel="stylesheet" href="/static/jquery-ui.css" />
+<link rel="stylesheet" href="/business/static/styleofregist.css" type="text/css" media="all" /> <!-- Style-CSS -->
+<link rel="stylesheet" href="/business/static/jquery-ui.css" />
 <!-- //css files -->
 <!-- web-fonts -->
 <link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
@@ -74,10 +74,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 		<!--//footer-->
 <!-- js -->
-<script type="text/javascript" src="/static/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="/business/static/jquery-2.1.4.min.js"></script>
 <!-- //js -->
 <!-- Calendar -->
-<script src="/static/jquery-ui.js"></script>
+<script src="/business/static/jquery-ui.js"></script>
 	<script>
 	  $(function() {
 		$( "#datepicker" ).datepicker();

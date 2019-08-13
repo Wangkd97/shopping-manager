@@ -32,8 +32,8 @@
                             <td>${category.parentName}</td>
                             <td>${category.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                             <td>${category.updateTime?string('yyyy-MM-dd HH:mm:ss')}</td>
-                            <td><a href="/user/category/update/${category.id}">修改</a></td>
-                            <td><a href="/user/category/deleteById/${category.id}">删除</a></td>
+                            <td><a href="/business/user/category/update/${category.id}">修改</a></td>
+                            <td><a href="/business/user/category/deleteById/${category.id}">删除</a></td>
                         </tr>
                         </#list>
                         </tbody>

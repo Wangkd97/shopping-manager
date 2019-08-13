@@ -36,8 +36,8 @@
                             <td>${u.phone}</td>
                             <td>${u.question}</td>
                             <td>${u.answer}</td>
-                            <td><a href="/user/update/${u.id}">修改</a>
-                                <a href="/user/deleteById/${u.id}">删除</a>
+                            <td><a href="/business/user/update/${u.id}">修改</a>
+                                <a href="/business/user/deleteById/${u.id}">删除</a>
                             </td>
 
                         </tr>
