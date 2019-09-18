@@ -43,4 +43,5 @@ public interface OrderMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Order record);
+    int alterStatus(Long orderNo);
 }

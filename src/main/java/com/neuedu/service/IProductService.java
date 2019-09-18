@@ -14,4 +14,5 @@ public interface IProductService {
     int deleteById(int id);
     List<Category> newSelectAll();
     int updatestatus(Product product);
+    List<Product> getfenye(int page,int size);
 }

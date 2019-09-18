@@ -46,4 +46,5 @@ public interface ProductMapper {
      */
     int updateByPrimaryKey(Product record);
     int updatestatus(Product product);
+    List<Product> getfenye(int page,int size);
 }

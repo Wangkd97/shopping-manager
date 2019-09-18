@@ -102,6 +102,15 @@ public class ProductController {
         }
         return "redirect:/user/product/getAll";
     }
+    @RequestMapping("getfenye/{page}/{size}")
+    public String getfenye(@PathVariable("page") int page,
+                           @PathVariable("size") int size,HttpSession session){
+        List<Product> list = iProductService.getfenye(page,size);
+        System.out.println(list);
+        session.setAttribute("list",list);
+        return "product/list";
+
+    }
 
 
 }

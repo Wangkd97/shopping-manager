@@ -79,7 +79,8 @@
 --     select id, category_id, name, subtitle, main_image, price, stock, status, create_time,
 --     update_time, sub_images, detail
 --     from neuedu_product
-    select  p.id,  p.name, c.name as categoryName, subtitle, main_image, price, stock, p.status, sub_images, detail,p.update_time,p.create_time from neuedu_product as p inner join neuedu_category as c on p.category_id=c.id
+    select  p.id,  p.name, c.name as categoryName, subtitle, main_image, price, stock, p.status, sub_images, detail,p.update_time,p.create_time from neuedu_product
+    as p inner join neuedu_category as c on p.category_id=c.id
   </select>
   <update id="updatestatus" parameterType="com.neuedu.pojo.Product">
      update neuedu_product
@@ -87,4 +88,8 @@
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getfenye" resultMap="BaseResultMap" parameterType="map">
+     select  p.id,  p.name, c.name as categoryName, subtitle, main_image, price, stock, p.status, sub_images, detail,p.update_time,p.create_time from neuedu_product
+    as p inner join neuedu_category as c on p.category_id=c.id limit #{ param1 },#{ param2 }
+  </select>
 </mapper>

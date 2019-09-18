@@ -20,7 +20,7 @@
                             <th>图片</th>
                             <th>单价</th>
                             <th>库存</th>
-                            <th>描述</th>
+                            <#--<th>描述</th>-->
                             <th>类目</th>
                             <th>创建时间</th>
                             <th>修改时间</th>
@@ -34,10 +34,10 @@
                         <tr>
                             <td>${productInfo.id}</td>
                             <td>${productInfo.name}</td>
-                            <td><img height="100" width="100" src="${productInfo.mainImage}" alt=""></td>
+                            <td><img height="100" width="100" src="http://img.cdn.imbession.top/${productInfo.mainImage}" alt=""></td>
                             <td>${productInfo.price}</td>
                             <td>${productInfo.stock}</td>
-                            <td>${productInfo.detail}</td>
+                            <#--<td height="100px">${productInfo.detail}</td>-->
                             <td>${productInfo.categoryName}</td>
                             <td>${productInfo.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
                             <td>${productInfo.updateTime?string('yyyy-MM-dd HH:mm:ss')}</td>

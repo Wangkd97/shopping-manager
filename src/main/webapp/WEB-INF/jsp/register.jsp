@@ -14,7 +14,6 @@
 
 
  <form action="register" method="post">
-
    <span>用户名:</span>
    <input type="text" name="username"/>
    <br/>

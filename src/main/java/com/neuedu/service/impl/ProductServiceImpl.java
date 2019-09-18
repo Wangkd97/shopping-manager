@@ -55,4 +55,10 @@ public class ProductServiceImpl implements IProductService{
         return productMapper.updatestatus(product);
     }
 
+    @Override
+    public List<Product> getfenye(int page, int size) {
+        List<Product> list =productMapper.getfenye(page,size);
+        return list;
+    }
+
 }

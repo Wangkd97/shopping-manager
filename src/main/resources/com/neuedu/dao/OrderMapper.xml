@@ -83,6 +83,9 @@
     -->
     select id, user_id, order_no, shipping_id, payment, payment_type, postage, status, 
     payment_time, send_time, end_time, close_time, create_time, update_time
-    from neuedu_order
+    from neuedu_order ORDER BY create_time desc
   </select>
+  <update id="alterStatus" parameterType="map">
+    update neuedu_order set `status`=40 WHERE order_no=#{oderno}
+  </update>
 </mapper>

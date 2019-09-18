@@ -21,7 +21,7 @@
     <!-- c3p0带有连接池的数据源 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="${jdbc.driver}"></property>
-        <property name="jdbcUrl" value="${jdbc.url}"></property>
+        <property name="jdbcUrl" value="${jdbc.url}?autoReconnect=true&amp;autoReconnectForPools=true"></property>
         <property name="user" value="${jdbc.user}"></property>
         <property name="password" value="${jdbc.password}"></property>
     </bean>

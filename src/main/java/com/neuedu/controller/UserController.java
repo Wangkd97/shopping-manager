@@ -19,9 +19,6 @@ public class UserController {
 
     @Autowired
     IUserService userService;
-
-
-
     @RequestMapping(value="login",method = RequestMethod.GET)
     public  String login(HttpSession session){
         if (session.getAttribute("user")!=null){
