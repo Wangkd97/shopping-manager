@@ -43,4 +43,6 @@ public interface OrderItemMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(OrderItem record);
+
+    List<OrderItem> selectByNo(Long no);
 }

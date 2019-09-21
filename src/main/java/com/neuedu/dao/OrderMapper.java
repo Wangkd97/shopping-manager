@@ -1,6 +1,8 @@
 package com.neuedu.dao;
 
 import com.neuedu.pojo.Order;
+import com.neuedu.vo.pageVo;
+
 import java.util.List;
 
 public interface OrderMapper {
@@ -44,4 +46,9 @@ public interface OrderMapper {
      */
     int updateByPrimaryKey(Order record);
     int alterStatus(Long orderNo);
+    List<Order> selectfenye(pageVo pageVo);
+    int selectcount();
+    List<Order> selectfahuo(pageVo pageVo);
+    int selectfahuocount();
+    Order selectByNo(Long no);
 }

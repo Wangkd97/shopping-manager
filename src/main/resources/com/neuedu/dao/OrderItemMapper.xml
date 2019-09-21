@@ -77,4 +77,7 @@
     quantity, total_price, create_time, update_time
     from neuedu_order_item
   </select>
+  <select id="selectByNo" resultMap="BaseResultMap" parameterType="java.lang.Long">
+    select * from neuedu_order_item WHERE order_no =#{no}
+  </select>
 </mapper>

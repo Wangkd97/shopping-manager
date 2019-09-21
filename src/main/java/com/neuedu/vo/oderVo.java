@@ -69,6 +69,8 @@ public class oderVo {
     private String orderStatus;
     private String payStatus;
     private String createTime;
+    private int currentPage;
+    private int totalPage;
 
     public String getCreateTime() {
         return createTime;

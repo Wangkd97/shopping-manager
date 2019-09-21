@@ -4,12 +4,17 @@
 <body>
 <div id="wrapper" class="toggled">
 
-    <#--边栏sidebar-->
+<#--边栏sidebar-->
     <#include "common/nav.ftl">
 
 
-    <#--主要内容content-->
+<#--主要内容content-->
+
+
     <div id="page-content-wrapper">
+        <div>
+          <input><button>查询</button>
+        </div>
         <div class="container">
             <div class="row clearfix">
                 <div class="col-md-4 column">
@@ -58,8 +63,8 @@
             <#--操作-->
                 <div class="col-md-12 column">
                 <#if orderDTO.status == 20>
-                    <a href="/sell/seller/order/finish?orderId=${orderDTO.orderId}" type="button" class="btn btn-default btn-primary">完结订单</a>
-                    <a href="/sell/seller/order/cancel?orderId=${orderDTO.orderId}" type="button" class="btn btn-default btn-danger">取消订单</a>
+                    <a href="/business/user/order/selectdetail/${orderDTO.orderId}" type="button" class="btn btn-default btn-primary">详情</a>
+                    <a href="/business/user/order/alterStatus/${orderDTO.orderId}" type="button" class="btn btn-default btn-danger">发货</a>
                 </#if>
                 </div>
             </div>

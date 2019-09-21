@@ -17,31 +17,32 @@
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-fw fa-plus"></i> 订单 <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">操作</li>
-                <li><a href="/business/user/order/selectAll">列表</a></li>
-                <li><a href="/business/user/">新增</a></li>
+                <li><a href="/business/user/order/selectfenye/1/10">订单列表</a></li>
+                <li><a href="/business/user/order/selectfahuo/1/10">待发货订单</a></li>
+                <li><a href="/business/user/">查询订单</a></li>
             </ul>
         </li>
         <li class="dropdown open">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-fw fa-plus"></i> 商品 <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">操作</li>
-                <li><a href="/business/user/product/getfenye/1/10">列表</a></li>
-                <li><a href="/business/user/product/insert">新增</a></li>
+                <li><a href="/business/user/product/getfenye/1/10">商品列表</a></li>
+                <li><a href="/business/user/product/insert">新增商品</a></li>
             </ul>
         </li>
         <li class="dropdown open">
-            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-fw fa-plus"></i> 类目 <span class="caret"></span></a>
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-fw fa-plus"></i> 类别 <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">操作</li>
-                <li><a href="/business/user/category/find">列表</a></li>
-                <li><a href="/business/user/category/insert">新增</a></li>
+                <li><a href="/business/user/category/find">类别列表</a></li>
+                <li><a href="/business/user/category/insert">新增类别</a></li>
             </ul>
         </li>
         <li class="dropdown open">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-fw fa-plus"></i> 用户 <span class="caret"></span></a>
             <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">操作</li>
-                <li><a href="/business/user/getAllUser">列表</a></li>
+                <li><a href="/business/user/getAllUser">用户列表</a></li>
             </ul>
         </li>
         <li>
