@@ -10,6 +10,7 @@ import com.neuedu.vo.oderVo;
 import com.neuedu.vo.orderDetailVo;
 import com.neuedu.vo.pageVo;
 import com.neuedu.vo.returnOrderVo;
+import com.sun.scenario.effect.impl.sw.java.JSWBrightpassPeer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -48,6 +49,8 @@ public class OrderController {
                 oder.setOrderStatus("已发货");
             }if (o.getStatus()==50){
                 oder.setOrderStatus("交易成功");
+            }if (o.getStatus()==0){
+                oder.setOrderStatus("已取消交易");
             }
             oder.setPhone(shipping.getReceiverPhone());
             oder.setShipname(shipping.getReceiverName());
@@ -96,6 +99,8 @@ public class OrderController {
                 oder.setOrderStatus("已发货");
             }if (o.getStatus()==50){
                 oder.setOrderStatus("交易成功");
+            }if (o.getStatus()==0){
+                oder.setOrderStatus("已取消交易");
             }
             oder.setPhone(shipping.getReceiverPhone());
             oder.setShipname(shipping.getReceiverName());
@@ -179,5 +184,32 @@ public class OrderController {
         session.setAttribute("orderDTO",orderDetailVo);
         return "/order/detail";
 
+    }
+    @RequestMapping("gotofind")
+    public String gotofind(){
+        return "/order/find";
+    }
+
+    @RequestMapping("finddetail/{no}")
+    public String finddetail(@PathVariable("no") Long no,
+                               HttpSession session){
+        Order order=iOrderService.selectByNo(no);
+        List<OrderItem> list =iOrderItemService.selectByNo(no);
+        orderDetailVo orderDetailVo=new orderDetailVo();
+        orderDetailVo.setList(list);
+        orderDetailVo.setOrderNo(order.getOrderNo());
+        orderDetailVo.setTotal(order.getPayment());
+        orderDetailVo.setStatus(order.getStatus());
+        session.setAttribute("orderDTO",orderDetailVo);
+        return "/order/finddetail";
+
+    }
+    @RequestMapping("cancelOrder/{no}")
+    public String cancelOrder(@PathVariable("no") Long no){
+        int i=iOrderService.cancelOrder(no);
+        if (i>0){
+            return "redirect:/user/order/selectfenye/1/10";
+        }
+        return "redirect:/user/order/selectfenye/1/10";
     }
 }

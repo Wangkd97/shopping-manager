@@ -19,7 +19,7 @@
                 <li class="dropdown-header">操作</li>
                 <li><a href="/business/user/order/selectfenye/1/10">订单列表</a></li>
                 <li><a href="/business/user/order/selectfahuo/1/10">待发货订单</a></li>
-                <li><a href="/business/user/">查询订单</a></li>
+                <li><a href="/business/user/order/gotofind">查询订单</a></li>
             </ul>
         </li>
         <li class="dropdown open">

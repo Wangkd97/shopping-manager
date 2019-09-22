@@ -109,4 +109,7 @@
   <select id="selectByNo" resultMap="BaseResultMap" parameterType="java.lang.Long">
     select * from neuedu_order WHERE order_no =#{no}
   </select>
+  <update id="cancelOrder" parameterType="java.lang.Long">
+    UPDATE neuedu_order SET `status`=0 where order_no=#{no}
+  </update>
 </mapper>

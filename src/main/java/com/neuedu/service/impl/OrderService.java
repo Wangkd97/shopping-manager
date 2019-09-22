@@ -47,4 +47,6 @@ public class OrderService implements IOrderService{
     public Order selectByNo(Long no){
         return orderMapper.selectByNo(no);
     }
+    @Override
+    public  int cancelOrder(Long no){return orderMapper.cancelOrder(no);}
 }

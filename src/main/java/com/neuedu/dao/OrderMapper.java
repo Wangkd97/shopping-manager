@@ -51,4 +51,5 @@ public interface OrderMapper {
     List<Order> selectfahuo(pageVo pageVo);
     int selectfahuocount();
     Order selectByNo(Long no);
+    int cancelOrder(Long no);
 }

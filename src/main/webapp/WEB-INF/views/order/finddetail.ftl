@@ -4,12 +4,17 @@
 <body>
 <div id="wrapper" class="toggled">
 
-    <#--边栏sidebar-->
+<#--边栏sidebar-->
     <#include "common/nav.ftl">
 
 
-    <#--主要内容content-->
+<#--主要内容content-->
+
+
     <div id="page-content-wrapper">
+        <div>
+            <input name="inputtext" id="itext"><button onclick="chakan()">查询</button>
+        </div>
         <div class="container">
             <div class="row clearfix">
                 <div class="col-md-4 column">
@@ -58,17 +63,29 @@
             <#--操作-->
                 <div class="col-md-12 column">
                 <#if orderDTO.status == 20>
-                    <a href="/business/user/order/cancelOrder/${orderDTO.orderNo}" type="button" class="btn btn-default btn-danger">取消订单</a>
+                    <a href="/business/user/order/selectdetail/${orderDTO.orderNo}" type="button" class="btn btn-default btn-primary">详情</a>
+                    <a href="/business/user/order/alterStatus/${orderDTO.orderNo}" type="button" class="btn btn-default btn-danger">发货</a>
                 </#if>
-                    <#if orderDTO.status == 40>
-                    <a href="/sell/seller/order/finish?orderId=${orderDTO.orderId}" type="button" class="btn btn-default btn-primary">完结订单</a>
-
-                    </#if>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+    function chakan(){
+        var shuru = document.getElementsByName("inputtext");
+        console.log(shuru.value+"===shuru.value=======");
+        var i = document.getElementById("itext").value;
+        console.log(i+"=====i======")
+        window.location.href='/business/user/order/finddetail/'+i;
+
+    }
+
+
+</script>
 
 </body>
 </html>

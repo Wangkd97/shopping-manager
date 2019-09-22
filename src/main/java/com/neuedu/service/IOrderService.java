@@ -13,5 +13,5 @@ public interface IOrderService {
     public  List<Order> selectfahuo(pageVo pageVo);
     public int selectfahuocount();
     public Order selectByNo(Long no);
-
+    public int cancelOrder(Long no);
 }
